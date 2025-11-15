@@ -19,6 +19,17 @@ const Index = () => {
     }
   ];
 
+  const socials = [
+    {
+      id: 1,
+      name: "Telegram",
+      username: "@Doxswat2013",
+      url: "https://t.me/Doxswat2013",
+      icon: "Send",
+      gradient: "from-blue-500 to-cyan-400"
+    }
+  ];
+
   const stars = Array.from({ length: 50 }, (_, i) => ({
     id: i,
     top: Math.random() * 100,
@@ -92,7 +103,32 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <div className="max-w-2xl mx-auto mt-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            Социальные сети
+          </h2>
+          
+          <div className="flex justify-center gap-6 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            {socials.map((social) => (
+              <a
+                key={social.id}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${social.gradient} flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50`}>
+                  <Icon name={social.icon as any} size={36} className="text-white" />
+                </div>
+                <p className="text-center mt-3 text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors">
+                  {social.username}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
           <p className="text-muted-foreground text-sm">
             🚀 Explore the cosmos of creativity
           </p>
