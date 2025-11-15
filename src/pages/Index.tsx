@@ -27,6 +27,22 @@ const Index = () => {
       url: "https://t.me/Doxswat2013",
       icon: "Send",
       gradient: "from-blue-500 to-cyan-400"
+    },
+    {
+      id: 2,
+      name: "Znoz работы",
+      username: "Мои работы",
+      url: "https://t.me/pricezodiak",
+      icon: "Briefcase",
+      gradient: "from-purple-500 to-indigo-500"
+    },
+    {
+      id: 3,
+      name: "Расценки",
+      username: "Прайс-лист",
+      url: "https://t.me/pricezodiak",
+      icon: "DollarSign",
+      gradient: "from-green-500 to-emerald-400"
     }
   ];
 
@@ -108,19 +124,22 @@ const Index = () => {
             Социальные сети
           </h2>
           
-          <div className="flex justify-center gap-6 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-wrap justify-center gap-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             {socials.map((social) => (
               <a
                 key={social.id}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className="group flex flex-col items-center"
               >
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${social.gradient} flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50`}>
-                  <Icon name={social.icon as any} size={36} className="text-white" />
+                <div className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${social.gradient} flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50`}>
+                  <Icon name={social.icon as any} size={40} className="text-white" />
                 </div>
-                <p className="text-center mt-3 text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors">
+                <p className="text-center mt-4 text-base font-medium text-foreground group-hover:text-primary transition-colors">
+                  {social.name}
+                </p>
+                <p className="text-center text-xs text-muted-foreground">
                   {social.username}
                 </p>
               </a>
